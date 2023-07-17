@@ -11,5 +11,9 @@ public class AreaOfEquiTriangle {
 		double area = Math.sqrt(3) / 4 * Math.pow(side, 2);
 		
 		System.out.println("Area Of an Equilateral Triangle is " + area);
+		
+		
+		
+		//hello code changed
 	}
 }
