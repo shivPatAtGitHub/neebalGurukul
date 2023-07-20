@@ -12,23 +12,34 @@ public class Assign6 {
 
 		int zeroth = 0;
 		int first = 1;
+		int fib = 1; // initialisation
 		
-		
-		
-		for(int i=1; i<100; i++) {
-			int fib = zeroth + first;
-			
-			if (fib >= lower && fib <= upper) {
-				System.out.println(fib);	
+		for(;fib<upper;) { //condition
+			if(fib >= lower) {
+				System.out.println(fib);
 			}
-			
-			if (fib > upper) {
-				break;
-			}
-			
+			fib = zeroth + first; // updation
 			zeroth = first;
 			first = fib;
 		}
+		
+		
+
+//		for(int i=1; i<100; i++) {
+//			int fib = zeroth + first;
+//			
+//			if (fib >= lower && fib <= upper) {
+//				System.out.println(fib);	
+//			}
+//			
+//			if (fib > upper) {
+//				break;
+//			}
+//			
+//			zeroth = first;
+//			first = fib;
+//		}
+		
 		
 	}
 
