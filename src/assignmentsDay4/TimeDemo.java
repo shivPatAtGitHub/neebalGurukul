@@ -1,4 +1,4 @@
-package com.gurukul.day4;
+package assignmentsDay4;
 
 
 class Time{
