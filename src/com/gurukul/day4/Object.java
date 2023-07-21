@@ -1,4 +1,3 @@
-
 package com.gurukul.day4;
 
 class Employee {
@@ -51,8 +50,7 @@ public class Object {
 		if(x.getSal() > y.getSal()) 
 			highSal = x;
 		 else 
-			highSal = y;
-		
+			highSal = y;		
 		
 		if(z.getSal() > highSal.getSal()) 
 			highSal = z;

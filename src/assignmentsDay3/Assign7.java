@@ -9,6 +9,12 @@ public class Assign7 {
 		
 		int num = sc.nextInt();
 		
+		if (num == 0) {
+			System.out.print("Zero");
+			
+		}
+		
+		
 		int dig = 0;
 		int sum = 0;
 		while (num!=0) {
@@ -17,6 +23,8 @@ public class Assign7 {
 			num = num/10;
 		}
 //		System.out.println(sum);
+//		System.out.println(dig);
+//		System.out.println(num);
 		
 		while(sum!=0) {
 			dig = sum%10;
@@ -44,6 +52,7 @@ public class Assign7 {
 			case 0 : System.out.print("Zero ");
 			break;
 			}
+//			System.out.println();
 			
 		}
 		
