@@ -7,9 +7,9 @@ package assignmentsDay7;
 
 import java.util.*;
 class Student {
-    String name;
-    String id;
-    ArrayList<Course> courses;
+    private String name;
+    private String id;
+    private ArrayList<Course> courses;
 
     public Student(String name, String id) {
 	this.name = name;
@@ -43,8 +43,8 @@ class Student {
 }
 
 class Course {
-    String id;
-    String name;
+    private String id;
+    private String name;
     int sem;
 
     public Course(String id, String name, int sem) {
@@ -125,34 +125,34 @@ public class StudentRoaster {
     }
 
     private static void displayMenu() {
-	System.out.println("Student Roster Management Program");
+	System.out.println("\nStudent Roster Management Program");
 	System.out.println("1. Add a new student");
 	System.out.println("2. Enroll a student in a course");
 	System.out.println("3. Display the list of courses a student is enrolled in");
 	System.out.println("4. Display the list of all students along with their enrolled courses");
 	System.out.println("5. Remove a student from the roster");
 	System.out.println("6. Exit the program");
-	System.out.print("Enter a number from above");
+	System.out.print("Enter a number from above\n");
     }
 
     private static void addStudent() {
 	Scanner sc = new Scanner(System.in);
-	System.out.print("Enter student name: ");
+	System.out.print("\nEnter student name: ");
 	String name = sc.nextLine();
 
 	String studentId;
 	Student existingStudent;
 	do {
-	    System.out.print("Enter student ID: ");
+	    System.out.print("\nEnter student ID: ");
 	    studentId = sc.next();
 	    existingStudent = findStudentById(studentId);
 	    if (existingStudent != null) {
-		System.out.println("Student with this ID already exists. Please enter a unique ID.");
+		System.out.println("\nStudent with this ID already exists. Please enter a unique ID.");
 	    }
 	} while (existingStudent != null);
 
 	studentRoster.add(new Student(name, studentId));
-	System.out.println("Student added to the roster.");
+	System.out.println("\nStudent added to the roster.");
     }
 
     private static void enrollInCourse() {
@@ -162,10 +162,10 @@ public class StudentRoaster {
 	Student student = findStudentById(studentId);
 
 	if (student == null) {
-	    System.out.println("There is no student in the roster with this ID.");
+	    System.out.println("\nThere is no student in the roster with this ID.\n");
 	    return;
 	}
-	System.out.println(" Course Id: 210 Course: Mechanical and Course Sem: 1");
+	System.out.println("\n Course Id: 210 Course: Mechanical and Course Sem: 1");
 	System.out.println(" Course Id: 211 Course: Civil and Course Sem: 3");
 	System.out.println(" Course Id: 213 Course: Electronics and Course Sem: 1");
 	System.out.println(" Course Id: 312 Course: Electrical and Course Sem: 3");
@@ -174,16 +174,16 @@ public class StudentRoaster {
 
 	String courseId;
 	Course existingCourse;
-	System.out.print("Choose and enter Course ID from");
+	System.out.print("\nChoose and enter Course ID from: ");
 	do {
 	    courseId = sc.next();
 	    existingCourse = findCourseById(courseId);
 	    if (existingCourse == null) {
-		System.out.println("No course exists with this ID, please eneter a valid ID");
+		System.out.println("\nNo course exists with this ID, please eneter a valid ID");
 	    } else {
 		student.getCourses().add(existingCourse);
 		enRolledStudent.add(findStudentById(studentId));
-		System.out.println("Student enrolled in the course.");
+		System.out.println("\nStudent enrolled in the course.");
 	    }
 	} while (existingCourse == null);
 	Course course = findCourseById(courseId);
@@ -197,11 +197,11 @@ public class StudentRoaster {
 	Student student = findStudentById(studentId);
 
 	if (student == null) {
-	    System.out.println("Student not found in the roster.");
+	    System.out.println("\nStudent not found in the roster.");
 	    return;
 	}
 
-	System.out.println("Courses enrolled by the student:");
+	System.out.println("\nCourses enrolled by the student:");
 	for (Course course : student.getCourses()) {
 	    System.out.println("Course ID: " + course.getId() + ", Course Name: " + course.getName() + ", Semester: "
 		    + course.getSem());
@@ -209,7 +209,7 @@ public class StudentRoaster {
     }
 
     private static void displayStudents() {
-	System.out.println("List of all students along with their enrolled courses:");
+	System.out.println("\nList of all students along with their enrolled courses:");
 	for (Student student : enRolledStudent) {
 	    System.out.println("Student ID: " + student.getId() + ", Name: " + student.getName());
 
@@ -229,12 +229,12 @@ public class StudentRoaster {
 	    Student student = studentRoster.get(i);
 	    if (student.getId().equals(studentId)) {
 		studentRoster.remove(i);
-		System.out.println("Student removed from the roster.");
+		System.out.println("\nStudent removed from the roster.");
 		return;
 	    }
 	}
 
-	System.out.println("Student not found in the roster.");
+	System.out.println("\nStudent not found in the roster.");
     }
 
     private static Student findStudentById(String studentId) {
