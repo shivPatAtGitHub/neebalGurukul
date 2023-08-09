@@ -186,7 +186,7 @@ public class StudentRoaster {
 		System.out.println("\nStudent enrolled in the course.");
 	    }
 	} while (existingCourse == null);
-	Course course = findCourseById(courseId);
+//	Course course = findCourseById(courseId);
 
     }
 
