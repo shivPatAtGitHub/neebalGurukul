@@ -1,0 +1,14 @@
+body {
+    background-color: beige;
+}
+
+th, tr, td {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.lightBG {
+    background-color: teal;
+    color: beige;
+}
+

@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu-bar{
+    background-color: aqua;
+    border: 5px solid blue;
+    margin: 50px 40px;
+    padding: 30px 40px 50px 40px;
+}
+
+.head-text {
+    font-size: 30px;
+    font-family: monospace;
+    /* font-weight: bold; */
+    color: blue;
+    margin: 30px 0 20px 0;
+}
+
+.Head {
+    font-size: 22px;
+}
+
+.Nav-Bar {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    align-items: center;
+}
+
+a, span {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    /* background-color: blue; */
+    color:aqua;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: aqua;
+    color: blue;
+}

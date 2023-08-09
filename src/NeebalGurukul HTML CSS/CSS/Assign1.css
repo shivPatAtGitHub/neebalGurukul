@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+h1 {
+    background-image: url("../logo/random4.jpg");
+    /* height: 5rem; */
+    padding: 1.5rem;
+    margin: 5px;
+    font-size: 4rem;
+    color: brown;
+}
+

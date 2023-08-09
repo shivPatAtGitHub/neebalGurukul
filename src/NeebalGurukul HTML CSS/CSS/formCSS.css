@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+body {
+    background-color: rgb(27, 25, 25);
+    margin: 5px 20px ;
+}
+
+h1, p {
+    margin: 20px 0 30px 0;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+form {
+    background-color: white;
+    margin: 20px auto 0px auto;
+    width: 97% auto;
+    padding: 40px 40px 30px 40px ;
+}
+
+.form-fields {
+    margin: 5px;
+    padding: 5px;
+}
+
+label {
+    font-size: 25px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+input {
+    color: teal;
+    font-size: 17px;
+    width: 100%;
+    padding: 5px 5px 5px 20px;
+    margin: 10px auto;
+    border: 0px;
+}
+
+.termCon{
+    /* font-weight: 100; */
+    font-size: 20px;
+    margin: 30px auto 10px auto;
+}
+
+span  a{
+    color: aqua;
+    font-size: 19px;
+}
+
+.signInLink {
+    text-align: center;
+    background-color: white;
+    margin: 10px auto 0px auto;
+    width: 97% auto;
+    padding: 7px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(46, 167, 127);
+    color: white;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
