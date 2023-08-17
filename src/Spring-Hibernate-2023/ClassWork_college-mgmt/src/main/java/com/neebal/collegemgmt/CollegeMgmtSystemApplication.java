@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.Async;
+
 
 @SpringBootApplication
-public class CollegeMgmtSystemApplication implements CommandLineRunner {
+@Async
+public class CollegeMgmtSystemApplication /*implements CommandLineRunner*/ {
 
 //	@Autowired
 //	private BookRepository bookRepository;
@@ -20,16 +23,16 @@ public class CollegeMgmtSystemApplication implements CommandLineRunner {
 //	@Autowired
 //	private BookStudentRepository bookStudentRepository;
 //
-	@Autowired
-	private BookStudentService bookStudentService;
+//	@Autowired
+//	private BookStudentService bookStudentService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CollegeMgmtSystemApplication.class, args);
 
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
+//	@Override
+//	public void run(String... args) throws Exception {
 //		// save a book
 //		Book book = new Book("prog in java", 900, 1500.0);
 //		book = this.bookRepository.save(book);
@@ -139,12 +142,12 @@ public class CollegeMgmtSystemApplication implements CommandLineRunner {
 //		this.bookStudentService.issueBook(5l, 1l);
 //		this.bookStudentService.returnBook(1l,1l);
 //		this.bookStudentService.transferBook(1l,2l, 3l);
-		this.bookStudentService.transferBookAlternative(5l, 1l, 3l);
+//		this.bookStudentService.transferBookAlternative(5l, 1l, 3l);
 
 
 
 
 
 
-	}
+//	}
 }

@@ -4,6 +4,7 @@ import com.neebal.collegemgmt.entities.Book;
 import com.neebal.collegemgmt.entities.BookStudent;
 import com.neebal.collegemgmt.entities.Student;
 import com.neebal.collegemgmt.exceptions.BookAlreadyIssuedException;
+import com.neebal.collegemgmt.exceptions.BookNotIssuedException;
 import com.neebal.collegemgmt.exceptions.ResourceNotFoundException;
 import com.neebal.collegemgmt.repository.BookRepository;
 import com.neebal.collegemgmt.repository.BookStudentRepository;
@@ -18,14 +19,20 @@ import java.util.Set;
 
 @Service
 public class BookStudentService {
-    @Autowired
+
     private BookRepository bookRepository;
 
-    @Autowired
     private StudentRepository studentRepository;
 
-    @Autowired
     private BookStudentRepository bookStudentRepository;
+
+    public BookStudentService(BookRepository bookRepository,
+                              StudentRepository studentRepository,
+                              BookStudentRepository bookStudentRepository) {
+            this.bookRepository = bookRepository;
+            this.studentRepository = studentRepository;
+            this.bookStudentRepository = bookStudentRepository;
+    }
 
     @Autowired // self injection to call business methods within the same service class
     @Lazy //to avoid circular dependency error in the case of self injection
@@ -84,7 +91,7 @@ public class BookStudentService {
         this.bookStudentRepository.save(bs);
 
         //send a confirmation email to the student
-        String email = "adparab97@gmail.com";
+        String email = "shivaldo7@gmail.com";
         sendEmailService.sendMail(email,"Book Issued Successfully");
         return bs;
     }
@@ -112,8 +119,8 @@ public class BookStudentService {
                                 bookStudent.getReturnDate() == null).count();
 
         if(c == 0) {
-            throw new BookAlreadyIssuedException(
-                    String.format("Book id %s already returned by student %s", bookId ,studentId)
+            throw new BookNotIssuedException(
+                    String.format("Book id %s is not yet issued to student %s", bookId ,studentId)
             );
         }
 

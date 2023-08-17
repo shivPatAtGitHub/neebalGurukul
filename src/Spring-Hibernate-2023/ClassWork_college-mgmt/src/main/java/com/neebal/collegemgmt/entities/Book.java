@@ -1,6 +1,7 @@
 package com.neebal.collegemgmt.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.util.Set;
 
@@ -19,12 +20,15 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     @Column(nullable = false, length = 50)
     private String title;
 
+    @Min(value = 5, message = "pages must be minimum 5")
     @Column(nullable = false)
     private Integer pages;
 
+    @DecimalMin(value = "1", message = "price must be min 1")
     @Column(nullable = true)
     private Double price;
 
@@ -74,9 +78,9 @@ public class Book {
     }
 
 
-    public Set<BookStudent> getStudentsIssued() {
-        return studentsIssued;
-    }
+//    public Set<BookStudent> getStudentsIssued() {
+//        return studentsIssued;
+//    }
 
     public void setStudentsIssued(Set<BookStudent> studentsIssued) {
         this.studentsIssued = studentsIssued;
