@@ -1,0 +1,9 @@
+Phase 1
+--> get access to edit buttons
+--> open and close player config with opening and closing overlay or by pressing cancel button in conf
+
+Phase 2
+--> capture player name entered by user in config and substitute in space for name <p>
+--> do the above task by using confirm button also stop the default behaviour of form submit button.
+--> make sure above task is performed for both player config seperately
+--> check for issues
